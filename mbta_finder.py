@@ -77,6 +77,9 @@ def get_nearest_station(latitude, longitude):
     response_data = get_json(final_url)
     nearby_station = response_data["stop"][0]["stop_name"]
     distance = response_data["stop"][0]["distance"]
+    """if float(distance) < 1:
+        distance = float(distance) / 5280
+        distance = str(distance)"""
     return nearby_station, distance
 
 
